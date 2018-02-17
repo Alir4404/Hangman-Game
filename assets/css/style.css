@@ -1,32 +1,101 @@
 body, html {
-    height: 100%;
-    margin: 0;
-    font: 400 15px/1.8 "Lato", sans-serif;
-    color: #777;
-  }
-  
-.bgimg {
-    background-image: url("assets/images/ganapathy-kumar-58535-v2.jpg");
-    height: 100%;
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  height: 100%;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  color: white;
+}
 
-#cowboy {
-      max-width: 500px;
-  }
-
-.col-md-10 {
-      text-align: center;
-      background-color: rgba(0, 0, 0, .8);
-      padding: 25px;
-  }
-
-.container {
-    margin-top: 5%;
+p {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 
+.titles {
+  color: white;
+  font-weight: 300;
+  position: relative;
+  font-size: 30px;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+}
 
+
+.titles:before, .titles:after {
+  position: absolute;
+  top: 51%;
+  overflow: hidden;
+  width: 50%;
+  height: 1px;
+  content: '\a0';
+  background-color: white;
+}
+
+.titles:before {
+  margin-left: -50%;
+  text-align: right;
+}
+
+.other-titles {
+  color: white;
+  font-weight: 300;
+  font-size: 36px;
+  text-align: center;
+}
+
+.other-titles2 {
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.bgimg {
+  background-image: url("../../assets/images/desert.jpg");
+  height: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#game {
+  padding-top: 15px;
+}
+
+#cowboy {
+  max-width: 500px;
+}
+
+.col-md-10 {
+  text-align: center;
+  background-color: rgba(0, 0, 0, .7);
+  padding: 25px;
+}
+
+.col-md-10 {
+  margin-top: 10%;
+}
+
+.stats {
+  padding-top: 25px;
+}
+
+
+#win-counter {
+ color: #1998f7;
+ font-weight: 600;
+}
+
+#loss-counter {
+  color: #1998f7;
+  font-weight: 600;
+}
+
+#guesses-left {
+  color: #1998f7;
+  font-weight: 600;
+}
