@@ -62,53 +62,37 @@ function checkLetters(letter) {
 	}
 };
 
-// Function to run after each guess is made 
+
 function roundComplete() {
-	// Log inital status update in the console
+
 	console.log("WinCount: " + winCounter + " | LossCount: " + lossCounter + " | NumGuesses: " + numGuesses);
 
-	// Update the HTML to reflect the new number of guesses, and update correct guesses
+
 	document.getElementById("guesses-left").innerHTML = numGuesses;
-	// Print the array of guesses and blanks onto the page
 	document.getElementById("word-blanks").innerHTML = blanksAndSuccesses.join(" ");
-	// Print the wrong guesses onto the page
 	document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
 
-	// If all the letters match the solution
 	if (lettersInChosenWord.toString() === blanksAndSuccesses.toString()) {
-		// Add to the win counter and alert the user
 		winCounter++;
 		alert("You escape the noose to ride another day!");
 
-		// Update the win counter in the HTML and restart the game
 		document.getElementById("win-counter").innerHTML = winCounter;
 		startGame();
 	}
 
-	// If user runs out of guesses
 	else if (numGuesses === 0) {
-		// Add to the loss counter and alert the user
 		lossCounter++;
 		alert("You have met your fate by the Hangman's Noose!");
 
-		// Update the loss counter in the HTML and restart the game
 		document.getElementById("loss-counter").innerHTML = lossCounter;
 		startGame();
 	}
 }; 
 
-// MAIN PROCESS
-// ==========================================================================
-
-// Start game
 startGame();
 
-// Initiate click listners
 document.onkeyup = function(event) {
-	// Converts all key clicks to lowercase letters
 	var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
-	// Runs the code to check for correctness
 	checkLetters(letterGuessed);
-	// Runs the code after each round is done
 	roundComplete();
 }
